@@ -20,22 +20,22 @@ public class Methods {
         return sum;
     }
 
-    public List<Product> onehundredafterdisc(List<Product> list){
+    public List<Product> oneHundredAfterDisc(List<Product> list){
 
-        List<Product> listn = new ArrayList<Product>();
+        List<Product> listNew = new ArrayList<>();
 
         for(Product e : list){
             e.apply();
             e.round();
             if(e.getPrice() > 100)
-                listn.add(e);
+                listNew.add(e);
         }
 
-        return listn;
+        return listNew;
     }
 
     public List<Product> sortedAfterDisc(List<Product> list){
-        List<Product> listNew = new ArrayList<Product>();
+        List<Product> listNew = new ArrayList<>();
 
         for(Product e : list){
             e.apply();
@@ -48,12 +48,12 @@ public class Methods {
     }
 
     public List<Product> extremes(List<Product> list) throws Exception {
-        List<Product> listNew = new ArrayList<Product>();
+        List<Product> listNew = new ArrayList<>();
 
         double maxPrice = Double.MIN_VALUE;
         double minPrice = Double.MAX_VALUE;
-        Product pmax = null;
-        Product pmin = null;
+        Product maxProduct = null;
+        Product minProduct = null;
 
         for(Product e : list){
             e.apply();
@@ -62,18 +62,18 @@ public class Methods {
         }
         for(Product e : listNew){
             if(e.getPrice() > maxPrice)
-                pmax = e;
+                maxProduct = e;
             if(e.getPrice() < minPrice)
-                pmin = e;
+                minProduct = e;
 
         }
 
         if(listNew.isEmpty()) throw new Exception("Empty list");
 
-        List<Product> listNew1 = new ArrayList<Product>();
+        List<Product> listNew1 = new ArrayList<>();
 
-        listNew1.add(pmax);
-        listNew1.add(pmin);
+        listNew1.add(maxProduct);
+        listNew1.add(minProduct);
 
         return listNew1;
     }

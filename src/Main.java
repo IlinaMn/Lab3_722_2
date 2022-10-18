@@ -16,7 +16,7 @@ public class Main {
         p2.setDays(20);
         p2.setPrice(23.55);
 
-        List<Product> list = new ArrayList<Product>();
+        List<Product> list = new ArrayList<>();
 
         list.add(p1);
         list.add(p2);

@@ -1,8 +1,5 @@
 package Produkt;
 
-import java.io.FileOutputStream;
-import java.util.Formatter;
-
 public class Product {
 
     public double price;
@@ -17,10 +14,10 @@ public class Product {
         }
     }
 
-    public void round(){
+    public void round() {
         double price = 0.00;
 
-        while(price < this.price){
+        while (price < this.price) {
             price += 0.05;
         }
         this.price = price;
@@ -45,7 +42,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "price=" + String.format( "%.2f",price) +
+                "price=" + String.format("%.2f", price) +
                 ", days=" + days +
                 '}';
     }
